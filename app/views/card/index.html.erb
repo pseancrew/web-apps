@@ -1,0 +1,22 @@
+<%
+values = ["2", "3", "4", "5", "6", "7", "8", "9", "10", "ace", "jack", "queen", "king"]
+suits = ["hearts", "spades", "clubs", "diamonds"]
+
+deck = []
+for value in values
+    for suit in suits
+        deck << "#{value}_of_#{suit}"
+    end
+end
+shuffled_deck = deck.shuffle
+hand = shuffled_deck[0,5]
+%>
+
+<h1>Pick 5 cards, any cards!</h1>
+
+<% for card in hand %>
+    <img src="/images/cards/<%= card %>.svg">
+    <% end %>
+<p>
+   <a href="/card">Pick Again!</a>
+</p>
